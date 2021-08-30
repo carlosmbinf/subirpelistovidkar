@@ -1,0 +1,22 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "axios": "^0.21.1",
+    "get-urls": "^10.0.0",
+    "got": "^11.8.2",
+    "html-urls": "^2.4.26",
+    "http": "0.0.1-security",
+    "http-post": "^0.1.1",
+    "jquery": "^3.6.0",
+    "simple-text-search": "^1.1.5"
+  }
+}
