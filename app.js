@@ -39,7 +39,7 @@ for (var i = 5; i <= links.length - 4; i++) {
 pelis&&
 pelis.forEach(element => {
   
-      http.post("http://localhost:3000/insertPelis", element, (opciones, res, body) => {
+      http.post("http://152.206.118.56:3000/insertPelis", element, (opciones, res, body) => {
         if (!opciones.headers.error) {
           // console.log(`statusCode: ${res.statusCode}`);
           console.log("error " + JSON.stringify(opciones.headers));
