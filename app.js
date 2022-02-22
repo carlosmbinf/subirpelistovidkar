@@ -2,9 +2,9 @@ const got = require('got')
 const htmlUrls = require('html-urls')
 var http = require("http");
 http.post = require("http-post");
-var year = 2021
-var pelis = []
-;(async () => {
+var year = 2021;
+var pelis = [];
+(async () => {
   const url = `https://visuales.uclv.cu/Peliculas/Extranjeras/${year}/`
   if (!url) throw new TypeError('Need to provide an url as first argument.')
   const { body: html } = await got(url)
@@ -30,16 +30,17 @@ for (var i = 5; i <= links.length - 4; i++) {
   // console.log(`Name: ${nombre}`);
   // console.log(links[i]);
   let a = await getPeli(nombre,year,links[i].url)
-  a&&pelis.push(a);
+  a&&(a.nombre&&a.year&&a.peli&&a.poster)&&pelis.push(a);
   console.log(`Name: ${nombre}`);
-  console.log(pelis);
+  
   
 }
-// console.log(pelis.length)
+console.log(pelis);
+console.log(pelis.length)
 pelis&&
 pelis.forEach(element => {
   
-      http.post("http://152.206.118.56:3000/insertPelis", element, (opciones, res, body) => {
+      http.post("http://vidkar.ddns.net:6000/insertPelis", element, (opciones, res, body) => {
         if (!opciones.headers.error) {
           // console.log(`statusCode: ${res.statusCode}`);
           console.log("error " + JSON.stringify(opciones.headers));
